@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "client", "client\client.njsproj", "{7A87EE55-5A32-499A-8D15-A909C95B4638}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "server", "server\server.njsproj", "{7B10C690-CC53-4A16-8398-293BB3B46662}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{415EA56D-C849-4739-A8D2-4D793C712E80}"
+	ProjectSection(SolutionItems) = preProject
+		tsconfig.json = tsconfig.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A87EE55-5A32-499A-8D15-A909C95B4638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A87EE55-5A32-499A-8D15-A909C95B4638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A87EE55-5A32-499A-8D15-A909C95B4638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A87EE55-5A32-499A-8D15-A909C95B4638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B10C690-CC53-4A16-8398-293BB3B46662}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B10C690-CC53-4A16-8398-293BB3B46662}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B10C690-CC53-4A16-8398-293BB3B46662}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B10C690-CC53-4A16-8398-293BB3B46662}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

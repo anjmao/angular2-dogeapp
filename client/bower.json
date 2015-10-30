@@ -1,0 +1,12 @@
+{
+  "name": "expressJs+angularJs",
+  "version": "0.0.1",
+  "homepage": "",
+  "authors": [
+    "Andzej <andzej.maciusovic@outlook.com>"
+  ],
+  "license": "MIT",
+  "dependencies": {
+   
+  }
+}
