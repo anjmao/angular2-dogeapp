@@ -7,12 +7,12 @@ import {DymmyService} from './dummy-service';
     selector: 'my-app'
 })
 @View({
-        templateUrl: 'app/views/my-app.html',
+        templateUrl: 'app/doge-app.html',
         directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 class AppComponent {
 
-    public title = 'Tour of Heroes';
+    public title = 'Search result';
     public heroes = HEROES;
     public selectedHero: Hero;
 

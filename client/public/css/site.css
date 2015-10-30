@@ -1,44 +1,55 @@
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+body{
+	background-image: url('../images/bg.jpg');
 }
 
-.navbar {
-    margin-bottom: 20px;
+.doge-header {
+    background:#555;
+    margin-bottom:20px;
 }
 
-.heroes {
-    list-style-type: none;
-    margin-left: 1em;
-    padding: 0;
-    width: 10em;
+.doge-wrapper{
+    font-family: arial;
+    margin-top: 20px;
+    background-color:rgba(255, 255, 255, 0.5)
 }
 
-    .heroes li {
-        cursor: pointer;
-        position: relative;
-        left: 0;
-        transition: all 0.2s ease;
-    }
+.doge-title{
+    color: #FFF;
+    font-size: 30px;
+    text-align: left;
+}
 
-        .heroes li:hover {
-            color: #369;
-            background-color: #EEE;
-            left: .2em;
-        }
+.doge-search-bar{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom:40px;
+}
 
-    .heroes .badge {
-        font-size: small;
-        color: white;
-        padding: 0.1em 0.7em;
-        background-color: #369;
-        line-height: 1em;
-        position: relative;
-        left: -1px;
-        top: -1px;
-    }
+.doge-score{
+    color: #FFF;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+}
 
-.selected {
-    background-color: #EEE;
-    color: #369;
+.doge-btn{
+    font-size: 50px;
+    margin-top: 20px;
+    border: 0;
+}
+
+.doge-btn:hover{
+    background: #bbb;
+}
+
+.doge-btn:active{
+    background: #aaa;
+}
+
+.doge-menu li a {
+    color:#FFF;
+}
+
+.doge-menu li a:hover {
+    color:#555;
 }

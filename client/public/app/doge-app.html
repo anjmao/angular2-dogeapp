@@ -1,0 +1,33 @@
+﻿
+
+<div class="doge-search-bar">
+    <input placeholder="Type doge friend name..." type="text" />
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ng-for="#hero of heroes" (click)="onSelect(hero)" [ng-class]="getSelectedClass(hero)">
+            <th><span class="badge">{{hero.id}}</span> {{hero.name}}</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ng-if="selectedHero">
+    <h2>{{selectedHero.name}} details!</h2>
+    <div><label>id: </label>{{selectedHero.id}}</div>
+    <div>
+        <label>name: </label>
+        <input [(ng-model)]="selectedHero.name" placeholder="name"></input>
+    </div>
+</div>
