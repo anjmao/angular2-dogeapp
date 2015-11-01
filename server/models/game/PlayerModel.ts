@@ -20,6 +20,6 @@ var Player = db.define<types.PlayerInstance, types.Player>('player', {
      lifes: sequelize.INTEGER
 });
 
-Player.hasMany(Game, { foreignKey: 'idPlayer' , foreignKeyConstraint: true });
+Player.hasMany(Game, { foreignKey: 'idPlayer' });
 
 export = Player;

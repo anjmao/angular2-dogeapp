@@ -32,13 +32,7 @@ app.use(session({
 
 
 var env = process.env.NODE_ENV || 'development';
-if (env === 'development') {
-    app.use(errorHandler({ dumpExceptions: true, showStack: true }));
-}
-else if (env === 'production') {
-    app.use(errorHandler());
-}
-
+app.use(errorHandler());
 
 // Routes
 
