@@ -15,9 +15,6 @@
 
 ///<reference path="./angular2.d.ts"/>
 
-
-
-
 /**
  * @module
  * @description

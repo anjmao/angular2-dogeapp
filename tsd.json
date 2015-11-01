@@ -46,6 +46,9 @@
     },
     "createjs-lib/createjs-lib.d.ts": {
       "commit": "287cb2e1b112bdef6de8de0dd64836583b0c49ea"
+    },
+    "cors/cors.d.ts": {
+      "commit": "eb59a40d3c2f3257e34ec2ede181046230814a41"
     }
   }
 }

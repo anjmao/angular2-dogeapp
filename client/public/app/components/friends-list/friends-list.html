@@ -1,22 +1,24 @@
 ﻿<div class="doge-search-bar">
-    <input placeholder="Type doge friend name..." type="text" />
+    <input (keyup)="onSearch($event)" placeholder="First or last name, phrase" type="text" />
 </div>
 
 <table class="table">
     <thead>
         <tr>
-            <th>#</th>
+            <th>Reputation</th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Username</th>
+            <th>Created at</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ng-for="#hero of heroes" (click)="onSelect(hero)" [ng-class]="getSelectedClass(hero)">
-            <th><span class="badge">{{hero.id}}</span> {{hero.name}}</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+        <tr *ng-for="#friend of friendsList" (click)="onSelect(hero)">
+            <th><span class="badge">{{friend.reputation}}</span></th>
+            <th>{{friend.firstName}}</th>
+            <td>{{friend.lastName}}</td>
+            <td>{{friend.favoriteDogePhrase}}</td>
+            <td>{{friend.createdAt}}</td>
         </tr>
     </tbody>
 </table>

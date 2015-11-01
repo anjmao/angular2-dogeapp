@@ -90,12 +90,11 @@
     <TypeScriptCompile Include="public\_references.ts" />
     <TypeScriptCompile Include="typings\angular-http.d.ts" />
     <TypeScriptCompile Include="typings\angular2.d.ts" />
+    <TypeScriptCompile Include="typings\angular-router.d.ts" />
     <TypeScriptCompile Include="typings\es6-shim.d.ts" />
-    <TypeScriptCompile Include="typings\router.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
-    <Content Include="tsconfig.json" />
     <Content Include="tsd.json" />
   </ItemGroup>
   <ItemGroup>

@@ -26,12 +26,10 @@ class AppComponent {
 }
 
 class AppRequestOptions extends BaseRequestOptions {
-
-    seach = 'some=5';
-
+    
     constructor() {
         super();
-        //this.headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+        this.headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
         //this.headers.append('Mano', 'http://localhost:5000');
     }
 }

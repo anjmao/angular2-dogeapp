@@ -1,4 +1,4 @@
-﻿import {Component, View, FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/angular2';
+﻿import {Component, View, FORM_DIRECTIVES, CORE_DIRECTIVES, DatePipe} from 'angular2/angular2';
 import {FriendsListService} from './friends-list-service';
 
 @Component({
@@ -6,8 +6,9 @@ import {FriendsListService} from './friends-list-service';
     providers: [FriendsListService]
 })
 @View({
-    templateUrl: 'app/components/friends-list/friends-list.html',
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
+        templateUrl: 'app/components/friends-list/friends-list.html',
+        directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
+        pipes: [DatePipe]
 })
 export class FriendsListCmp{
 
@@ -16,10 +17,13 @@ export class FriendsListCmp{
     constructor(private friendsListService: FriendsListService) {
         console.log('FriendsListCmp initialized');
 
-        this.loadFriends();
+        this.loadFriends('');
 
     }
-    
+
+    onSearch($event) {
+        this.loadFriends($event.target.value);
+    }
 
     private loadFriends(searchValue?: string) {
 
