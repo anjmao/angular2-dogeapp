@@ -86,7 +86,6 @@
     <TypeScriptCompile Include="public\app\components\about\about-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\friends-list\friends-list-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\friends-list\friends-list-service.ts" />
-    <TypeScriptCompile Include="public\app\dummy-service.ts" />
     <TypeScriptCompile Include="public\_references.ts" />
     <TypeScriptCompile Include="typings\angular-http.d.ts" />
     <TypeScriptCompile Include="typings\angular2.d.ts" />

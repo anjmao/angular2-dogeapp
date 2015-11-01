@@ -19,60 +19,83 @@ var tsServerProject = ts.createProject({
 var tsPublicProject = ts.createProject({
    declarationFiles: false,
    noExternalResolve: false,
-   target: 'ES5'
+   module: 'system',
+   target: 'ES5',
+   experimentalDecorators: true,
+   emitDecoratorMetadata : true
 });
 
 
 //main task for dev
+gulp.task('start-server', ['compile-server'], startServer);
+gulp.task('start-client',['compile-client', 'start-client-nodemon'],  browserSyncTask);
 
-//main task for deploy to heroku
-//gulp.task('heroku-build', ['clean-deploy', 'copy-package', 'compile-all'], postBuild);
-gulp.task('heroku-build', ['compile-all'], postBuild);
-
-gulp.task('browser-sync', ['start-server'], browserSyncTask);
-gulp.task('browser-sync-only', browserSyncTask);
-gulp.task('start-server', ['compile-all'], startServer);
+gulp.task('start-client-nodemon', startClient);
 
 gulp.task('compile-all', ['compile-server', 'compile-public']);
 gulp.task('compile-server', compileServer);
-gulp.task('compile-public', compilePublic);
+gulp.task('compile-client', compilePublic);
 
-gulp.task('watch-all', ['watch-server']);
 gulp.task('watch-server', ['compile-server'], watchServer);
 gulp.task('watch-public', ['compile-public'], watchPublic);
 
-gulp.task('clean-deploy', cleanDeploy);
-gulp.task('clean-js', cleanJs);
-gulp.task('copy-package', copyPackage);
+gulp.task('clean-server-js', cleanServerJs);
 
-gulp.task('bower-inject', bowerInject);
-gulp.task('custom-inject', customInject);
-
-gulp.task('heroku-postinstall',['clean-js', 'heroku-build'], herokuPostinstall)
-
-function herokuPostinstall() {
-   log('heroku postinstall success!');
-}
 
 var browserSync = null;
-function browserSyncTask(params) {
+function browserSyncTask() {
+      
    browserSync = require('browser-sync').create();
+   
    browserSync.init(null, {
-      proxy: "http://localhost:5000",
+      proxy: "http://localhost:3000",
       files: config.browserSync,
       browser: "google chrome",
       port: 7000,
    });
    
-   gulp.watch([config.srcPublic+'/**/*.js', config.srcServer+'/views/**/*.vash', config.srcPublic+'/**/*.css', '!'+config.srcPublic+'client.njsproj']).on('change', function(){
-      log('reload must be');
+   gulp.watch([config.srcPublic+'/**/*.js', config.srcPublic+'/**/*.css', '!'+config.srcPublic+'client.njsproj']).on('change', function(){
       browserSync.reload();
+   });
+}
+
+function startClient(cb) {
+
+   var started = false;
+   var nodemon = require('gulp-nodemon');
+
+   return nodemon({
+      script: config.mainClientFile,
+      ignore: ["server/**","client/public/**"],
+      ext: 'js',
+   }).on('start', function () {
+      if (!started) {
+         cb();
+         started = true;
+      }
+   });
+}
+
+function startServer(cb) {
+
+   var started = false;
+   var nodemon = require('gulp-nodemon');
+
+   return nodemon({
+      script: config.mainServerFile,
+      ignore: ["client/**"],
+      ext: 'js',
+   }).on('start', function () {
+      if (!started) {
+         cb();
+         started = true;
+      }
    });
 }
 
 function compileServer(params) {
    
-   var tsResult = gulp.src(config.tsServerSrc)
+   var tsResult = gulp.src(config.serverSourcePaths)
       .pipe(sourcemaps.init())
       .pipe(ts(tsServerProject));
 
@@ -83,94 +106,31 @@ function compileServer(params) {
 }
 
 function compilePublic(params) {
-   var tsResult = gulp.src(config.tsPublicSrc)
+   var tsResult = gulp.src(config.clientSourcePaths)
       .pipe(sourcemaps.init())
       .pipe(ts(tsPublicProject));
 
    return tsResult.js
-      .pipe(concat('public.js'))
       .pipe(sourcemaps.write('../source-maps'))
-      .pipe(gulp.dest(config.clientApp));
+      .pipe(gulp.dest(config.clientAppPath));
 }
 
 
 function watchServer(params) {
-   gulp.watch(config.tsServerSrc, ['compile-server']);
+   gulp.watch(config.serverSourcePaths, ['compile-server']);
 }
 
 function watchPublic(params) {
-   gulp.watch(config.tsPublicSrc, ['compile-public']);
+   gulp.watch(config.clientSourcePaths, ['compile-public']);
 }
 
-function startServer(cb) {
-
-   var started = false;
-   var nodemon = require('gulp-nodemon');
-
-   return nodemon({
-      script: config.mainFile,
-      ignore: ["client/**"],
-      ext: 'js',
-   }).on('restart', function () {
-
-   }).on('start', function () {
-      if (!started) {
-         cb();
-         started = true;
-      }
-   });
-
-}
-
-function copyPackage(params) {
-   return gulp.src(['package.json', 'Procfile']).pipe(gulp.dest('./deploy'));
-}
-
-function cleanDeploy() {
-   return gulp.src('./deploy', { read: false })
-      .pipe(clean());
-}
-
-function postBuild(params) {
-//    var files = [
-//       './src/**/*.js',
-//       './src/**/*.json',
-//       './src/**/*.png',
-//       './src/**/*.css',
-//       './src/**/*.vash',
-//       './src/**/*.wav',
-//       './src/**/*.mp3'
-//    ];
-// 
-//    return gulp.src(files)
-//       .pipe(gulp.dest('./deploy'));
-}
-
-
-function cleanJs(params) {
+function cleanServerJs(params) {
    var paths = [
       config.srcServer + '**/*.js'
    ];
    return gulp.src(paths, { read: true })
       .pipe(clean());
 }
-
-function bowerInject() {
-   return gulp.src(config.tsServerSrc + 'views/layout.vash')
-      .pipe(wiredep())
-      .pipe(gulp.dest(config.destServer + 'views/'));
-}
-
-function customInject(params) {
-   var target = gulp.src(config.srcServer + 'views/layout.vash');
-   // It's not necessary to read the files (will speed up things), we're only after their paths: 
-   var sources = gulp.src(config.publicJsInject);
-
-   return target.pipe(inject(sources))
-      .pipe(gulp.dest(config.destServer + 'views/'));
-}
-
-
 
 function log(message, object) {
    if(object){

@@ -1,39 +1,27 @@
-var destServer = 'server/';
-	
+
 var srcServer = 'server/',
     srcPublic = 'client/',
-	 clientApp = srcPublic + 'app/';
+	clientAppPath = srcPublic + 'public/app/';
 
 var config = {
-	tsCompiler : { module: 'commonjs'},
-	tsServerSrc : [
+	serverSourcePaths : [
 		srcServer + '**/*.ts',
 		'!'+srcPublic+'**/*.ts'
 	],
-	jsServerSrc : [
-		srcServer + '**/*.js',
-		'!'+srcPublic+'**/*.js'
+	clientSourcePaths : [
+	    clientAppPath + '**/*.ts'
 	],
-	tsPublicSrc : [
-	    clientApp + '**/*.ts'
-	],
-	tsGameSrc : [
-	    clientApp + 'game/**/*.ts',
-		'!'+clientApp + 'typings**/*.ts',
-		'!'+clientApp + 'game/tests/**/*.ts'
-	],
-	publicJsInject : [
-		 clientApp + '**/*.js'
-	],
-	mainFile : destServer + 'app.js',
-	destServer : destServer,
+
+	mainServerFile : srcServer + 'app.js',
+	mainClientFile : srcPublic + 'startup.js',
+
 	srcPublic : srcPublic,
 	srcServer : srcServer,
-	clientApp : clientApp,
-	gameTestsSrc: clientApp+ 'game/tests/**/*.ts',
-	
+	clientAppPath : clientAppPath,
+	destServer: srcServer,
+
 	browserSync: [
-		'client/**/*.*'
+		'client/public/**/*.*'
 	]
 	
 };

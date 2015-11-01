@@ -1,4 +1,5 @@
-﻿// Type definitions for Angular v2.0.0-local_sha.aaf41fc
+﻿
+// Type definitions for Angular v2.0.0-local_sha.aaf41fc
 // Project: http://angular.io/
 // Definitions by: angular team <https://github.com/angular/>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
@@ -9,7 +10,7 @@
 // modifying this file.
 // ***********************************************************
 
-
+/// <reference path="es6-shim.d.ts" />
 
 
 

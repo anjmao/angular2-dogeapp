@@ -7,8 +7,7 @@ import {FriendsListService} from './friends-list-service';
 })
 @View({
         templateUrl: 'app/components/friends-list/friends-list.html',
-        directives: [FORM_DIRECTIVES, CORE_DIRECTIVES],
-        pipes: [DatePipe]
+        directives: [FORM_DIRECTIVES, CORE_DIRECTIVES]
 })
 export class FriendsListCmp{
 

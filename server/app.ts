@@ -13,7 +13,7 @@ import testController = require('./api/TestController');
 var app = express();
 
 // Configuration
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (5000));
 app.set('views', path.join( __dirname, '/views') ); // critical to use path.join on windows
 app.set('view engine', 'vash');
 app.set('view options', { layout: false });
