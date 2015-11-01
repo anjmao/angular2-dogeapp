@@ -71,23 +71,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="public\app\components\about\about.html" />
+    <Content Include="public\app\components\friends-list\friends-list.html" />
     <Content Include="public\app\doge-app.html" />
     <Content Include="public\css\site.css" />
     <Content Include="public\images\bg.jpg" />
     <Content Include="public\images\stipriausilietuvoje2014.png" />
     <Content Include="public\index.html" />
     <Content Include="public\libs\systemjs.js" />
-    <None Include="public\_references.js" />
     <Content Include="startup.js" />
-    <None Include="_references.js" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="public\app\bootstrap.ts" />
+    <TypeScriptCompile Include="public\app\components.ts" />
+    <TypeScriptCompile Include="public\app\components\about\about.ts" />
+    <TypeScriptCompile Include="public\app\components\friends-list\friends-list.ts" />
     <TypeScriptCompile Include="public\app\dummy-service.ts" />
     <TypeScriptCompile Include="public\_references.ts" />
-    <TypeScriptCompile Include="typings\angular2-2.0.0-alpha.39.d.ts" />
+    <TypeScriptCompile Include="typings\angular-http.d.ts" />
+    <TypeScriptCompile Include="typings\angular2.d.ts" />
     <TypeScriptCompile Include="typings\es6-shim.d.ts" />
-    <TypeScriptCompile Include="typings\router-2.0.0-alpha.39.d.ts" />
+    <TypeScriptCompile Include="typings\router.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
@@ -97,6 +101,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -114,7 +119,7 @@
     <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
-	<TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
+    <TypeScriptExperimentalDecorators>True</TypeScriptExperimentalDecorators>
     <TypeScriptMapRoot />
     <TypeScriptSourceRoot />
   </PropertyGroup>

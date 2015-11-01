@@ -1,33 +1,22 @@
 ﻿
 
-<div class="doge-search-bar">
-    <input placeholder="Type doge friend name..." type="text" />
-</div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ng-for="#hero of heroes" (click)="onSelect(hero)" [ng-class]="getSelectedClass(hero)">
-            <th><span class="badge">{{hero.id}}</span> {{hero.name}}</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-    </tbody>
-</table>
-
-<div *ng-if="selectedHero">
-    <h2>{{selectedHero.name}} details!</h2>
-    <div><label>id: </label>{{selectedHero.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ng-model)]="selectedHero.name" placeholder="name"></input>
+<div class="container doge-wrapper">
+    <div class="row doge-header">
+        <div class="col-md-6">
+            <div class="doge-title">Doge friends search network</div>
+        </div>
+        <div class="col-md-6">
+            <div class="doge-menu">
+                <ul class="nav nav-pills doge-menu pull-right">
+                    <li role="presentation"><a [router-link]="['/FriendsList']" href="#">Home</a></li>
+                    <li role="presentation" [router-link]="['/About']"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <router-outlet></router-outlet>
+
+
 </div>

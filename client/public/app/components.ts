@@ -1,0 +1,1 @@
+﻿export * from './components/friends-list/friends-list';
