@@ -6,7 +6,7 @@
 @View({
     templateUrl: 'app/components/about/about.html'
 })
-export class About {
+export class AboutCmp {
 
     title: string = 'About page';
 

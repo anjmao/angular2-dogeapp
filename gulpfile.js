@@ -24,7 +24,6 @@ var tsPublicProject = ts.createProject({
 
 
 //main task for dev
-gulp.task('start', ['start-server']);
 
 //main task for deploy to heroku
 //gulp.task('heroku-build', ['clean-deploy', 'copy-package', 'compile-all'], postBuild);

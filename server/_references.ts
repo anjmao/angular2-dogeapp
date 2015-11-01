@@ -9,15 +9,5 @@
 /// <reference path="typings/lodash/lodash.d.ts" />
 /// <reference path="typings/q/Q.d.ts" />
 
-//views controllers
-// <reference path="controllers/IndexController.ts"/>
-
-//models
-// <reference path="models/game/PlayerModel.ts"/>
-
-//api
-// <reference path="api/game-controller.ts"/>
-
-
-//types
-// <reference path="models/model-types.ts"/>
+//app declarations
+/// <reference path="app.d.ts" />

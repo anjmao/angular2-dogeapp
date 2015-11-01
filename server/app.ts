@@ -8,8 +8,7 @@ import errorHandler = require("errorhandler");
 import path = require('path');
 import session = require('express-session');
 
-import routes = require('./controllers/IndexController');
-import apiGameController = require('./api/GameController');
+import dogeFriendsController = require('./modules/doge-friends/controllers/doge-friends-controller');
 import testController = require('./api/TestController');
 
 var app = express();
@@ -36,10 +35,7 @@ app.use(errorHandler());
 
 // Routes
 
-//app.get('/', routes.index);
-app.use('/', routes);
-app.use('/api/game', apiGameController);
-app.use('/test', testController); 
+app.use('/api/doge-friends', dogeFriendsController);
 
 
 app.listen(app.get('port'), function() {

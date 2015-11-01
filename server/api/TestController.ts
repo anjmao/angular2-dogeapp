@@ -1,14 +1,11 @@
 ﻿// <reference path='../_references.ts' />
 import express = require('express');
-import modelTypes = require('../models/ModelTypes');
-import gs = require('../services/GameService');
-import models = require('../models/Root');
 
 import DbConnection = require('../core/db/DbConnection');
 import sequelize = require('sequelize');
 
 var router = express.Router();
-var gameService = new gs.GameService();
+
 
 
 router.get('/session', (req: express.Request, res: express.Response) => {

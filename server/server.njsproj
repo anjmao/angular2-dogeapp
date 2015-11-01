@@ -36,12 +36,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="api\" />
-    <Folder Include="controllers\" />
     <Folder Include="core\" />
     <Folder Include="core\db\" />
-    <Folder Include="models\" />
-    <Folder Include="models\game\" />
-    <Folder Include="services\" />
+    <Folder Include="modules\" />
+    <Folder Include="modules\doge-friends\" />
+    <Folder Include="modules\doge-friends\controllers\" />
+    <Folder Include="modules\doge-friends\models\" />
+    <Folder Include="modules\doge-friends\services\" />
     <Folder Include="typings\" />
     <Folder Include="typings\body-parser\" />
     <Folder Include="typings\chai\" />
@@ -53,21 +54,17 @@
     <Folder Include="typings\node\" />
     <Folder Include="typings\q\" />
     <Folder Include="typings\sequelize\" />
-    <Folder Include="views\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="api\GameController.ts" />
+    <TypeScriptCompile Include="modules\doge-friends\controllers\doge-friends-controller.ts" />
     <TypeScriptCompile Include="api\TestController.ts" />
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="controllers\IndexController.ts" />
     <TypeScriptCompile Include="core\db\DbConfig.ts" />
     <TypeScriptCompile Include="core\db\DbConnection.ts" />
-    <TypeScriptCompile Include="models\game\GameModel.ts" />
-    <TypeScriptCompile Include="models\game\PlayerModel.ts" />
-    <TypeScriptCompile Include="models\ModelTypes.ts" />
-    <TypeScriptCompile Include="models\Root.ts" />
-    <TypeScriptCompile Include="services\BaseService.ts" />
-    <TypeScriptCompile Include="services\GameService.ts" />
+    <TypeScriptCompile Include="app.d.ts" />
+    <TypeScriptCompile Include="modules\doge-friends\models\doge-friend-model.ts" />
+    <TypeScriptCompile Include="modules\doge-friends\services\doge-friends-service.ts" />
+    <TypeScriptCompile Include="modules\doge-friends\_references.ts" />
     <TypeScriptCompile Include="typings\express\express-session.d.ts" />
     <TypeScriptCompile Include="typings\express\express-sessions.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
