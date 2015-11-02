@@ -31,3 +31,9 @@
         <input [(ng-model)]="selectedHero.name" placeholder="name"></input>
     </div>
 </div>
+
+<div *ng-if="friendsList.length === 0">
+   <p class="text-center">
+       <button class="btn btn-success" (click)="addNewFriend()">Add new Doge friend</button>
+   </p>
+</div>

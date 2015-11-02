@@ -1,0 +1,92 @@
+﻿<h1>Friend form</h1>
+
+<form class="form-horizontal" #hf="form" novalidate>
+    <!--first name-->
+    <div class="form-group">
+        <label for="firstName" class="col-sm-2 control-label">First name</label>
+        <div class="col-sm-6">
+
+            <input [(ng-model)]="formModel.firstName"
+                   ng-control="firstName" #first-name="form"
+                   required
+                   type="text"
+                   class="form-control"
+                   id="firstName"
+                   placeholder="First name">
+
+            <div *ng-if="!firstName.valid && firstName.touched" class="alert alert-danger">
+                First name is required
+            </div>
+
+        </div>
+    </div>
+
+    <!--last name-->
+    <div class="form-group">
+        <label for="lastName" class="col-sm-2 control-label">Last name</label>
+        <div class="col-sm-6">
+
+            <input [(ng-model)]="formModel.lastName"
+                   ng-control="lastName" #last-name="form"
+                   required
+                   type="text"
+                   class="form-control"
+                   id="lastName"
+                   placeholder="Last name">
+
+            <div  *ng-if="!lastName.valid && lastName.touched" class="alert alert-danger">
+                Last name is required
+            </div>
+
+        </div>
+    </div>
+
+    <!--favorite doge phrase-->
+    <div class="form-group">
+        <label for="favoriteDogePhrase" class="col-sm-2 control-label">Favorite Doge phrase</label>
+        <div class="col-sm-6">
+            <input [(ng-model)]="formModel.favoriteDogePhrase"
+                   ng-control="favoriteDogePhrase" #favorite-doge-phrase="form"
+                   required
+                   type="text"
+                   class="form-control"
+                   id="favoriteDogePhrase"
+                   placeholder="Favorite Doge phrase">
+
+            <div *ng-if="!favoriteDogePhrase.valid && favoriteDogePhrase.touched" class="alert alert-danger">
+                Favorite Doge phrase is required
+            </div>
+        </div>
+    </div>
+
+    <!--reputation-->
+    <div class="form-group">
+        <label for="reputation" class="col-sm-2 control-label">Favorite Doge phrase</label>
+        <div class="col-sm-6">
+
+            <select [(ng-model)]="formModel.reputation"
+                    ng-control="reputation" #reputation="form"
+                    id="reputation" 
+                    class="form-control" 
+                    required>
+                <option *ng-for="#r of reputations" [value]="r">{{r}}</option>
+            </select>
+
+            <div *ng-if="!reputation.valid && reputation.touched" class="alert alert-danger">
+                Favorite Doge phrase is required
+            </div>
+
+        </div>
+    </div>
+
+    <!--save button-->
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button [disabled]="!hf.form.valid" (click)="saveForm()"  type="submit" class="btn btn-success">Save</button>
+        </div>
+    </div>
+
+    <p class="bg-warning" style="padding:15px;">
+        <b>Debug: </b>{{diagnostic}}
+    </p>
+</form>

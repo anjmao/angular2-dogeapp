@@ -8,8 +8,8 @@ declare module App {
 
     interface IDogeFriend extends IModelBase {
         idDogeFriend?: number;
-        firstName: string;
-        lastName: string;
+        firstName?: string;
+        lastName?: string;
         favoriteDogePhrase?: string;
         reputation?: number;
     }
