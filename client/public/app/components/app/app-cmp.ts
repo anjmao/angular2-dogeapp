@@ -10,7 +10,7 @@ import {AboutCmp} from '../about/about-cmp';
     selector: 'my-app'
 })
 @View({
-    templateUrl: 'app/doge-app.html',
+    templateUrl: 'app/components/app/doge-app.html',
     encapsulation: ViewEncapsulation.Emulated,
     directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
 })

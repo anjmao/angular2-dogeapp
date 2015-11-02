@@ -74,7 +74,7 @@
     <Content Include="public\app\components\about\about.html" />
     <Content Include="public\app\components\friend-form\friend-form.html" />
     <Content Include="public\app\components\friends-list\friends-list.html" />
-    <Content Include="public\app\doge-app.html" />
+    <Content Include="public\app\components\app\doge-app.html" />
     <Content Include="public\css\site.css" />
     <Content Include="public\images\bg.jpg" />
     <Content Include="public\images\stipriausilietuvoje2014.png" />
