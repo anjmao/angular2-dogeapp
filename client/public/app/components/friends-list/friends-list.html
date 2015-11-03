@@ -10,6 +10,7 @@
             <th>Last Name</th>
             <th>Username</th>
             <th>Created at</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +20,7 @@
             <td>{{friend.lastName}}</td>
             <td>{{friend.favoriteDogePhrase}}</td>
             <td>{{friend.createdAt}}</td>
+            <td><a href="#" [router-link]="['/FriendFormCmp',{idDogeFriend: friend.idDogeFriend}]">edit</a></td>
         </tr>
     </tbody>
 </table>

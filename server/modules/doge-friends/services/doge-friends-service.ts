@@ -27,6 +27,10 @@ class DogeFriendsService {
         return DogeFriendModel.Model.findAll(findOptions);
     }
 
+    get(idDogeFriend: number): Promise<DogeFriendModel.IDogeFriendInstance> {
+        return DogeFriendModel.Model.findById(idDogeFriend);
+    }
+
     create(request: App.IDogeFriend): Promise<DogeFriendModel.IDogeFriendInstance> {
         return DogeFriendModel.Model.create(request);
     }
@@ -43,7 +47,7 @@ class DogeFriendsService {
         });
     };
 
-    delete(idDogeFriend) {
+    delete(idDogeFriend: number) {
 
         return DogeFriendModel.Model.findById(idDogeFriend).then((dogeFriendInstance) => {
 

@@ -15,6 +15,18 @@ router.get('/list', (req: express.Request, res: express.Response) => {
     
 });
 
+router.get('/one', (req: express.Request, res: express.Response) => {
+
+    var idDogeFriend = <number>req.query.idDogeFriend;
+    
+    service.get(idDogeFriend).then((result) => {
+        res.send(result);
+    }).catch((error) => {
+        res.send(error);
+    });
+
+});
+
 router.post('/create', (req: express.Request, res: express.Response) => {
     
     var request = <App.IDogeFriend>req.body;

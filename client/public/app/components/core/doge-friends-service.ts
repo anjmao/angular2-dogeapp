@@ -20,8 +20,33 @@ export class DogeFriendsService {
         return this.http.get(`${this.base}/api/doge-friends/list?searchValue=${searchValue}`, params);
     }
 
+    one(idDogeFriend: number): any {
+
+        var params: ngHttp.RequestOptionsArgs = {
+            method: 'GET'
+        };
+
+        return this.http.get(`${this.base}/api/doge-friends/one?idDogeFriend=${idDogeFriend}`, params);
+    }
+
+    saveDogeFriend(request: App.IDogeFriend): any {
+
+        var action;
+        if (request.idDogeFriend) {
+            return this.update(request)
+        } else {
+            return this.create(request);
+        }
+
+    }
+
     create(request: App.IDogeFriend): any {
         
         return this.http.post(`${this.base}/api/doge-friends/create`, JSON.stringify(request));
+    }
+
+    update(request: App.IDogeFriend): any {
+
+        return this.http.put(`${this.base}/api/doge-friends/update`, JSON.stringify(request));
     }
 }
