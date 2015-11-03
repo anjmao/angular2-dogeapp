@@ -11,10 +11,34 @@ export interface IDogeFriendModel extends Sequelize.Model<IDogeFriendInstance, A
 
 var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend', {
     idDogeFriend: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-    firstName: { type: Sequelize.STRING },
-    lastName: { type: Sequelize.STRING },
-    favoriteDogePhrase: { type: Sequelize.STRING },
-    reputation: { type: Sequelize.INTEGER }
+    firstName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            len: [2, 30],
+        }
+    },
+    lastName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            len: [2, 30],
+        }
+    },
+    favoriteDogePhrase: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+            len: [1, 200],
+        }
+    },
+    reputation: {
+        type: Sequelize.INTEGER,
+        validate: {
+            min: 1,
+            max: 5
+        }
+    }
 });
 
 SequalizeModel.sync({ force: true }).then((model) => {

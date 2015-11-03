@@ -8,7 +8,6 @@ import cors = require('cors');
 import path = require('path');
 
 import dogeFriendsController = require('./modules/doge-friends/controllers/doge-friends-controller');
-import testController = require('./api/TestController');
 
 var app = express();
 

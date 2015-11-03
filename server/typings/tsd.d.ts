@@ -9,3 +9,5 @@
 /// <reference path="chai/chai.d.ts" />
 /// <reference path="q/Q.d.ts" />
 /// <reference path="cors/cors.d.ts" />
+/// <reference path="bluebird/bluebird.d.ts" />
+/// <reference path="validator/validator.d.ts" />
