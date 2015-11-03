@@ -90,9 +90,10 @@
     <TypeScriptCompile Include="public\app\bootstrap.ts" />
     <TypeScriptCompile Include="public\app\components\about\about-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\app\app-cmp.ts" />
+    <TypeScriptCompile Include="public\app\components\core\doge-friends-service.ts" />
     <TypeScriptCompile Include="public\app\components\friend-form\friend-form-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\friends-list\friends-list-cmp.ts" />
-    <TypeScriptCompile Include="public\app\components\friends-list\friends-list-service.ts" />
+    <TypeScriptCompile Include="public\app\services.ts" />
     <TypeScriptCompile Include="public\_references.ts" />
     <TypeScriptCompile Include="typings\angular-http.d.ts" />
     <TypeScriptCompile Include="typings\angular2.d.ts" />

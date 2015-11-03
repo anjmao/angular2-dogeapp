@@ -1,7 +1,20 @@
 ﻿<h1>Friend form</h1>
 
-<form class="form-horizontal" #hf="form" novalidate>
+
+<div *ng-if="formSaved" class="alert alert-success">
+    Form saved
+</div>
+
+<form *ng-if="!formSaved" class="form-horizontal" #hf="form" novalidate>
     <!--first name-->
+
+    <div *ng-if="errors" class="alert alert-danger">
+        <ul>
+            <li *ng-for="#error of errors">{{error.path}} {{error.message}}</li>
+        </ul>
+    </div>
+
+
     <div class="form-group">
         <label for="firstName" class="col-sm-2 control-label">First name</label>
         <div class="col-sm-6">

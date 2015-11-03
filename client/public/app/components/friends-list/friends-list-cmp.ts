@@ -1,11 +1,9 @@
 ﻿import {Component, View, FORM_DIRECTIVES, CORE_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {Router, RouteConfig, Route} from 'angular2/router';
-import {FriendsListService} from './friends-list-service';
-import {FriendFormCmp} from '../friend-form/friend-form-cmp';
+import {DogeFriendsService} from '../core/doge-friends-service';
 
 @Component({
-    selector: 'friends-list',
-    providers: [FriendsListService]
+    selector: 'friends-list'
 })
 @View({
     templateUrl: 'app/components/friends-list/friends-list.html',
@@ -16,7 +14,7 @@ export class FriendsListCmp {
 
     friendsList: App.IDogeFriend[] = [];
 
-    constructor(private friendsListService: FriendsListService, private router: Router) {
+    constructor(private dogeFriendsService: DogeFriendsService, private router: Router) {
         console.log('FriendsListCmp initialized');
         this.loadFriends('');
     }
@@ -32,10 +30,8 @@ export class FriendsListCmp {
 
     private loadFriends(searchValue?: string) {
 
-        this.friendsListService.getList(searchValue)
-        // Call map on the response observable to get the parsed people object
+        this.dogeFriendsService.getList(searchValue)
             .map(res => res.json())
-        // Subscribe to the observable to get the parsed people object and attach it to the  component
             .subscribe(friendsList => this.friendsList = friendsList);
     }
 
