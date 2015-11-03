@@ -35,7 +35,6 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="api\" />
     <Folder Include="core\" />
     <Folder Include="core\db\" />
     <Folder Include="modules\" />
@@ -44,20 +43,21 @@
     <Folder Include="modules\doge-friends\models\" />
     <Folder Include="modules\doge-friends\services\" />
     <Folder Include="typings\" />
+    <Folder Include="typings\bluebird\" />
     <Folder Include="typings\body-parser\" />
     <Folder Include="typings\chai\" />
+    <Folder Include="typings\cors\" />
     <Folder Include="typings\errorhandler\" />
     <Folder Include="typings\express\" />
     <Folder Include="typings\lodash\" />
     <Folder Include="typings\method-override\" />
     <Folder Include="typings\mocha\" />
     <Folder Include="typings\node\" />
-    <Folder Include="typings\q\" />
     <Folder Include="typings\sequelize\" />
+    <Folder Include="typings\validator\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="modules\doge-friends\controllers\doge-friends-controller.ts" />
-    <TypeScriptCompile Include="api\TestController.ts" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="core\db\DbConfig.ts" />
     <TypeScriptCompile Include="core\db\DbConnection.ts" />
@@ -65,11 +65,21 @@
     <TypeScriptCompile Include="modules\doge-friends\models\doge-friend-model.ts" />
     <TypeScriptCompile Include="modules\doge-friends\services\doge-friends-service.ts" />
     <TypeScriptCompile Include="modules\doge-friends\_references.ts" />
+    <TypeScriptCompile Include="typings\bluebird\bluebird.d.ts" />
+    <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
+    <TypeScriptCompile Include="typings\chai\chai.d.ts" />
+    <TypeScriptCompile Include="typings\cors\cors.d.ts" />
+    <TypeScriptCompile Include="typings\errorhandler\errorhandler.d.ts" />
     <TypeScriptCompile Include="typings\express\express-session.d.ts" />
     <TypeScriptCompile Include="typings\express\express-sessions.d.ts" />
     <TypeScriptCompile Include="typings\express\express.d.ts" />
+    <TypeScriptCompile Include="typings\lodash\lodash.d.ts" />
     <TypeScriptCompile Include="typings\method-override\method-override.d.ts" />
+    <TypeScriptCompile Include="typings\mocha\mocha.d.ts" />
+    <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\sequelize\sequelize.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
+    <TypeScriptCompile Include="typings\validator\validator.d.ts" />
     <TypeScriptCompile Include="_references.ts" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->

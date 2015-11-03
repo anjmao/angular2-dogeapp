@@ -75,10 +75,14 @@
     <Content Include="public\app\components\friend-form\friend-form.html" />
     <Content Include="public\app\components\friends-list\friends-list.html" />
     <Content Include="public\app\components\app\doge-app.html" />
+    <Content Include="public\css\bootstrap.css" />
     <Content Include="public\css\site.css" />
     <Content Include="public\images\bg.jpg" />
     <Content Include="public\images\stipriausilietuvoje2014.png" />
     <Content Include="public\index.html" />
+    <Content Include="public\libs\angular-router.js" />
+    <Content Include="public\libs\angular2-http.js" />
+    <Content Include="public\libs\angular2.js" />
     <Content Include="public\libs\systemjs.js" />
     <Content Include="startup.js" />
   </ItemGroup>
@@ -102,7 +106,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="public\libs\router.dev.min.js.map" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
