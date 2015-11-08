@@ -4,7 +4,7 @@ In this example I created Demo application for searching and adding new Doge fri
 ## Environment setup
 * Install NodeJs from https://nodejs.org/
 * Install PostgreSQL from http://www.postgresql.org/
-
+* Clone repository to your local mashine
 * Run Npm install
 ```
 npm install
