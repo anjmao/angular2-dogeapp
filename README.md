@@ -6,7 +6,8 @@ TypeScript is a free and open source programming language developed and maintain
 Learn more about [Typescript](https://github.com/Microsoft/TypeScript/wiki)
 
 ### Angular2
-Angular2 is WEB applications developments framework which allow to create robust WEB applications.
+Angular2 is WEB applications developments framework which allow to create robust WEB applications. <br/>
+Learn more about [Angular2](https://angular.io/)
 
 ### NodeJs
 Node.js is an open-source, cross-platform runtime environment for developing server-side web applications. Node.js applications are written in JavaScript and can be run within the Node.js runtime on OS X, Microsoft Windows, Linux. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. <br/>
