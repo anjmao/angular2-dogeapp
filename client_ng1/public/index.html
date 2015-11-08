@@ -1,0 +1,71 @@
+﻿<!doctype HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body ng-app="app">
+
+    <div class="container doge-wrapper" ng-controller="homeCtrl as ctrl">
+        <div class="row doge-header">
+            <div class="col-md-6">
+                <div class="doge-title">Doge friends search network</div>
+            </div>
+            <div class="col-md-6">
+                <div class="doge-menu">
+                    <ul class="nav nav-pills doge-menu pull-right">
+                        <li role="presentation"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="#">About</a></li>
+                        <li role="presentation"><a href="#">Add new friend</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="doge-search-bar">
+            <input ng-keyup="ctrl.onSearch($event)" placeholder="First or last name, phrase" type="text" />
+        </div>
+        <div style="overflow: auto; height:500px;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Reputation</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Favorite phrase</th>
+                        <th>Created at</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="friend in ctrl.friendsList">
+                        <td><span class="badge">{{friend.reputation}}</span></td>
+
+                        <td ng-click="friend.editable = true">
+                            {{friend.firstName}}
+                            <input ng-if="friend.editable" type="text" ng-model="friend.firstName" />
+                        </td>
+
+                        <td>{{friend.lastName}}</td>
+                        <td>{{friend.favoriteDogePhrase}}</td>
+                        <td>{{friend.createdAt}}</td>
+                        <td><a href="#"><span class="glyphicon glyphicon-pencil"></span> Edit</a> </td>
+                        <td><a href="#"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Total records: {{ctrl.friendsList.length}}</p>
+
+    </div>
+
+
+
+
+    <script src="libs/systemjs.js"></script>
+    <script src="libs/angular.min.js"></script>
+    <script src="bootstrap.js"></script>
+
+</body>
+</html>

@@ -43,21 +43,33 @@ var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend
 
 SequalizeModel.sync({ force: true }).then((model) => {
 
-    model.create({
-        firstName: 'Micky',
-        lastName: 'Mouse',
-        favoriteDogePhrase: 'Such Wowo',
-        reputation: 5
-    });
+    var names = ['Bailey', 'Lucy', 'Charlie', 'Rocky', 'Cooper', 'Sam', 'Zeus'],
+        dogePhrases = ['Such Wow Angular2', 'Amaz app with Typescript', 'Much NodeJs', 'Such amaze Sequalize ORM', 'Such wow PostgreSQL'],
+        randomName = () => {
+            return names[Math.floor(Math.random() * names.length)];
+        },
+        randomPhrase = () => {
+            return dogePhrases[Math.floor(Math.random() * dogePhrases.length)];
+        };
 
-    model.create({
-        firstName: 'Tom',
-        lastName: 'Butty',
-        favoriteDogePhrase: 'Amazing',
-        reputation: 4
-    });
 
-    console.log('DogeFriendModel created');
+    for (var i = 0; i < 100; i++) {
+        
+        model.create({
+            firstName: randomName()+i,
+            lastName: randomName()+i,
+            favoriteDogePhrase: randomPhrase(),
+            reputation: 5
+        });
+
+        model.create({
+            firstName: randomName()+i,
+            lastName: randomName()+i,
+            favoriteDogePhrase: randomPhrase(),
+            reputation: 4
+        });
+    }
+    
 });
 
 export var Model = SequalizeModel;

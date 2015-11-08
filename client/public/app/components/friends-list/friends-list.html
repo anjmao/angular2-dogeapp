@@ -2,39 +2,36 @@
     <input (keyup)="onSearch($event)" placeholder="First or last name, phrase" type="text" />
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Reputation</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-            <th>Created at</th>
-            <th></th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ng-for="#friend of friendsList">
-            <th><span class="badge">{{friend.reputation}}</span></th>
-            <th>{{friend.firstName}}</th>
-            <td>{{friend.lastName}}</td>
-            <td>{{friend.favoriteDogePhrase}}</td>
-            <td>{{friend.createdAt}}</td>
-            <td><a href="#" [router-link]="['/FriendFormCmp',{idDogeFriend: friend.idDogeFriend}]"><span class="glyphicon glyphicon-pencil"></span> Edit</a> </td>
-            <td><a href="#" (click)="deleteDogeFriend(friend)"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
-        </tr>
-    </tbody>
-</table>
-
-<div *ng-if="selectedHero">
-    <h2>{{selectedHero.name}} details!</h2>
-    <div><label>id: </label>{{selectedHero.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ng-model)]="selectedHero.name" placeholder="name"></input>
-    </div>
+<div style="overflow: auto; height:500px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Reputation</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Favorite phrase</th>
+                <th>Created at</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ng-for="#friend of friendsList">
+                <td><span class="badge">{{friend.reputation}}</span></td>
+                <td (click)="friend.editable = true">
+                    {{friend.firstName}}
+                    <input *ng-if="friend.editable" type="text" [(ng-model)]="friend.firstName" />
+                </td>
+                <td>{{friend.lastName}}</td>
+                <td>{{friend.favoriteDogePhrase}}</td>
+                <td>{{friend.createdAt}}</td>
+                <td><a href="#" [router-link]="['/FriendFormCmp',{idDogeFriend: friend.idDogeFriend}]"><span class="glyphicon glyphicon-pencil"></span> Edit</a> </td>
+                <td><a href="#" (click)="deleteDogeFriend(friend)"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<p>Total records: {{friendsList.length}}</p>
 
 <div *ng-if="friendsList.length === 0">
    <p class="text-center">

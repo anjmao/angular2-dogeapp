@@ -7,6 +7,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "server", "server\server.njs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client", "client\client.csproj", "{DD0BDD08-9757-4CAB-9DCC-F9FF52A0A99C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "client_ng1", "client_ng1\client_ng1.csproj", "{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DD0BDD08-9757-4CAB-9DCC-F9FF52A0A99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0BDD08-9757-4CAB-9DCC-F9FF52A0A99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0BDD08-9757-4CAB-9DCC-F9FF52A0A99C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
