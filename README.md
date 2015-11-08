@@ -2,7 +2,7 @@
 In this example I created Demo application for searching and adding new Doge friends using technologies described bellow.
 
 ### Typescript
-TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript.
+TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript. <br/>
 Learn more about [Typescript](https://github.com/Microsoft/TypeScript/wiki)
 
 ### Angular2
