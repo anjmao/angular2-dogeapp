@@ -1,5 +1,5 @@
 # Angular2 with Typescript, NodeJs with ExpressJs and Sequalize ORM with PostgreSQL
-In this example I created Demo application for searching and adding new Doge friends using technologies described bellow.
+In this example I created Demo application to show how to implement server and client side application two do CRUD operations for one DB table called DogeFriends.
 
 ## Environment setup
 * Install NodeJs from https://nodejs.org/
