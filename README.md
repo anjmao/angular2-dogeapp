@@ -1,6 +1,24 @@
 # Angular2 with Typescript, NodeJs with ExpressJs and Sequalize ORM with PostgreSQL
 In this example I created Demo application for searching and adding new Doge friends using technologies described bellow.
 
+## Environment setup
+* Install NodeJs from https://nodejs.org/
+* Install PostgreSQL from http://www.postgresql.org/
+
+* Run Npm install
+```
+npm install
+```
+* Run gulp start-server to start server side application
+```
+gulp start-server
+```
+* Run gulp start-client to start client side angular2 application
+```
+gulp start-client
+```
+Recommened IDE is Visual Studio Community because it have best integration with Typescript compilation. This is alos my prefered IDE as a .NET developer.
+
 ### Typescript
 TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript. <br/>
 Learn more about [Typescript](https://github.com/Microsoft/TypeScript/wiki)
