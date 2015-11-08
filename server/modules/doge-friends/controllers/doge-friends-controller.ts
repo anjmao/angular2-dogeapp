@@ -53,7 +53,7 @@ router.put('/update', (req: express.Request, res: express.Response) => {
 
 router.delete('/delete', (req: express.Request, res: express.Response) => {
     
-    var idDogeFriend = <number>req.body.idDogeFriend;
+    var idDogeFriend = <number>req.query.idDogeFriend;
 
     service.delete(idDogeFriend).then((result) => {
         res.send(result);

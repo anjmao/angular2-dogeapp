@@ -11,16 +11,18 @@
             <th>Username</th>
             <th>Created at</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <tr *ng-for="#friend of friendsList" (click)="onSelect(hero)">
+        <tr *ng-for="#friend of friendsList">
             <th><span class="badge">{{friend.reputation}}</span></th>
             <th>{{friend.firstName}}</th>
             <td>{{friend.lastName}}</td>
             <td>{{friend.favoriteDogePhrase}}</td>
             <td>{{friend.createdAt}}</td>
-            <td><a href="#" [router-link]="['/FriendFormCmp',{idDogeFriend: friend.idDogeFriend}]">edit</a></td>
+            <td><a href="#" [router-link]="['/FriendFormCmp',{idDogeFriend: friend.idDogeFriend}]"><span class="glyphicon glyphicon-pencil"></span> Edit</a> </td>
+            <td><a href="#" (click)="deleteDogeFriend(friend)"><span class="glyphicon glyphicon-trash"></span> Delete</a></td>
         </tr>
     </tbody>
 </table>

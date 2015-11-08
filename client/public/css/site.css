@@ -54,6 +54,12 @@ body{
     color:#555;
 }
 
+.doge-menu > li > a.router-link-active{
+    color: #555;
+    background-color:#fff;
+}
+
+
 .ng-valid[required] {
   border-left: 5px solid #42A948; /* green */
 }

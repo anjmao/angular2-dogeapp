@@ -49,4 +49,9 @@ export class DogeFriendsService {
 
         return this.http.put(`${this.base}/api/doge-friends/update`, JSON.stringify(request));
     }
+
+    delete(idDogeFriend: number): any {
+
+        return this.http.delete(`${this.base}/api/doge-friends/delete?idDogeFriend=${idDogeFriend}`);
+    }
 }

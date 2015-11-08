@@ -16,7 +16,7 @@ export class FriendsListCmp {
 
     constructor(private dogeFriendsService: DogeFriendsService, private router: Router) {
         console.log('FriendsListCmp initialized');
-        this.loadFriends('');
+        this.loadFriends();
     }
 
     onSearch($event) {
@@ -29,7 +29,17 @@ export class FriendsListCmp {
         this.router.navigate(['FriendFormCmp', { param: '1', a: 's' }]);
     }
 
+    deleteDogeFriend(friend: App.IDogeFriend) {
+        if (confirm('Are you sure?')) {
+            this.dogeFriendsService.delete(friend.idDogeFriend).subscribe(() => {
+                this.loadFriends();
+            });
+        }
+    }
+
     private loadFriends(searchValue?: string) {
+
+        if (!searchValue) searchValue = '';
 
         this.dogeFriendsService.getList(searchValue)
             .map(res => res.json())
