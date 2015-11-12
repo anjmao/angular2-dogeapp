@@ -22,7 +22,9 @@
   "homepage": "https://github.com/Anjmao/candy-fun#readme",
   "devDependencies": {
     "browser-sync": "^2.7.13",
-    "gulp-nodemon": "^2.0.3"
+    "chai": "^3.4.1",
+    "gulp-nodemon": "^2.0.3",
+    "mocha": "^2.3.3"
   },
   "dependencies": {
     "body-parser": "^1.12.4",

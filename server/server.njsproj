@@ -41,6 +41,7 @@
     <Folder Include="modules\doge-friends\controllers\" />
     <Folder Include="modules\doge-friends\models\" />
     <Folder Include="modules\doge-friends\services\" />
+    <Folder Include="tests\" />
     <Folder Include="typings\" />
     <Folder Include="typings\bluebird\" />
     <Folder Include="typings\body-parser\" />
@@ -64,6 +65,13 @@
     <TypeScriptCompile Include="modules\doge-friends\models\doge-friend-model.ts" />
     <TypeScriptCompile Include="modules\doge-friends\services\doge-friends-service.ts" />
     <TypeScriptCompile Include="modules\doge-friends\_references.ts" />
+    <TypeScriptCompile Include="tests\doge-friends-service-tests.ts">
+      <TestFramework>Mocha</TestFramework>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="tests\UnitTest1.ts">
+      <SubType>Code</SubType>
+      <TestFramework>Mocha</TestFramework>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="typings\bluebird\bluebird.d.ts" />
     <TypeScriptCompile Include="typings\body-parser\body-parser.d.ts" />
     <TypeScriptCompile Include="typings\chai\chai.d.ts" />
