@@ -9,7 +9,7 @@ export interface IDogeFriendInstance extends Sequelize.Instance<IDogeFriendInsta
 export interface IDogeFriendModel extends Sequelize.Model<IDogeFriendInstance, App.IDogeFriend> { }
 
 
-var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend', {
+var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend', <any>{
     idDogeFriend: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     firstName: {
         type: Sequelize.STRING,
@@ -41,7 +41,7 @@ var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend
     }
 });
 
-SequalizeModel.sync({ force: true }).then((model) => {
+SequalizeModel.sync({ force: false }).then((model) => {
 
     var names = ['Bailey', 'Lucy', 'Charlie', 'Rocky', 'Cooper', 'Sam', 'Zeus'],
         dogePhrases = ['Such Wow Angular2', 'Amaz app with Typescript', 'Much NodeJs', 'Such amaze Sequalize ORM', 'Such wow PostgreSQL'],
@@ -53,7 +53,7 @@ SequalizeModel.sync({ force: true }).then((model) => {
         };
 
 
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 20; i++) {
         
         model.create({
             firstName: randomName()+i,

@@ -66,7 +66,7 @@ function startClient(cb) {
 
    return nodemon({
       script: config.mainClientFile,
-      ignore: ["server/**","client/public/**"],
+      ignore: ["server/*","client/public/*"],
       ext: 'js',
    }).on('start', function () {
       if (!started) {
@@ -83,7 +83,9 @@ function startServer(cb) {
 
    return nodemon({
       script: config.mainServerFile,
-      ignore: ["client/**"],
+      ignore: ["client/*"],
+      env: { 'NODE_ENV': 'development' },
+      nodeArgs: ['--debug'],
       ext: 'js',
    }).on('start', function () {
       if (!started) {
