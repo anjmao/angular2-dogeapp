@@ -37,15 +37,29 @@ class DogeFriendsService {
 
     update(request: App.IDogeFriend): Promise<DogeFriendModel.IDogeFriendInstance> {
 
-        return DogeFriendModel.Model.findById(request.idDogeFriend).then((dogeFriendInstance) => {
+        //return new Promise<DogeFriendModel.IDogeFriendInstance>((resolve, reject) => {
+
+        //    DogeFriendModel.Model.findById(request.idDogeFriend).then((dogeFriendInstance) => {
+
+        //        dogeFriendInstance.firstName = request.firstName;
+        //        dogeFriendInstance.lastName = request.lastName;
+        //        dogeFriendInstance.reputation = request.reputation;
+
+        //        dogeFriendInstance.save().then((dogeFriendInstance) => {
+        //            resolve(dogeFriendInstance);
+        //        });
+        //    });
+        //});
+
+        return <any>(DogeFriendModel.Model.findById(request.idDogeFriend).then((dogeFriendInstance) => {
 
             dogeFriendInstance.firstName = request.firstName;
             dogeFriendInstance.lastName = request.lastName;
             dogeFriendInstance.reputation = request.reputation;
 
             return dogeFriendInstance.save();
-        });
-    };
+        }));
+    }
 
     delete(idDogeFriend: number) {
 

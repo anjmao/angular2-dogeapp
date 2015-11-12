@@ -41,7 +41,7 @@ var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend
     }
 });
 
-SequalizeModel.sync({ force: false }).then((model) => {
+SequalizeModel.sync({ force: true }).then((model) => {
 
     var names = ['Bailey', 'Lucy', 'Charlie', 'Rocky', 'Cooper', 'Sam', 'Zeus'],
         dogePhrases = ['Such Wow Angular2', 'Amaz app with Typescript', 'Much NodeJs', 'Such amaze Sequalize ORM', 'Such wow PostgreSQL'],
