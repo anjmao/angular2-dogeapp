@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		package.json = package.json
 	EndProjectSection
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsConsoleApp1", "NodejsConsoleApp1\NodejsConsoleApp1.njsproj", "{30E389D4-DA13-4353-86D8-C870B76209D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +36,10 @@ Global
 		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0342B704-854E-4D7F-8EAF-5C34AF4A77C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E389D4-DA13-4353-86D8-C870B76209D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E389D4-DA13-4353-86D8-C870B76209D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E389D4-DA13-4353-86D8-C870B76209D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E389D4-DA13-4353-86D8-C870B76209D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

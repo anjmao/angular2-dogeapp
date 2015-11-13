@@ -1,6 +1,7 @@
 ﻿import {Component, View, FORM_DIRECTIVES, CORE_DIRECTIVES, ViewEncapsulation} from 'angular2/angular2';
 import {Router, RouteConfig, Route, ROUTER_DIRECTIVES} from 'angular2/router';
 import {DogeFriendsService} from '../core/doge-friends-service';
+import {FriendRowCmp} from './friend-row-cmp';
 
 @Component({
     selector: 'friends-list'
@@ -8,7 +9,7 @@ import {DogeFriendsService} from '../core/doge-friends-service';
 @View({
     templateUrl: 'app/components/friends-list/friends-list.html',
     encapsulation: ViewEncapsulation.Emulated,
-    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES]
+    directives: [FORM_DIRECTIVES, CORE_DIRECTIVES, ROUTER_DIRECTIVES, FriendRowCmp]
 })
 export class FriendsListCmp {
 
