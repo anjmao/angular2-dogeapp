@@ -2,22 +2,16 @@
 In this example I created Demo application to show how to implement server and client side application two do CRUD operations for one DB table called DogeFriends.
 
 ## Environment setup
-* Install NodeJs from https://nodejs.org/
-* Install PostgreSQL from http://www.postgresql.org/
-* Clone repository to your local mashine
-* Run Npm install
-```
-npm install
-```
-* Run gulp start-server to start server side application
-```
-gulp start-server
-```
-* Run gulp start-client to start client side angular2 application
-```
-gulp start-client
-```
-Recommened IDE is Visual Studio Community because it have best integration with Typescript compilation. This is alos my prefered IDE as a .NET developer.
+1. Install NodeJs from https://nodejs.org/
+2. Install PostgreSQL from http://www.postgresql.org/
+3. Clone repository to your local mashine
+4. Run Npm install `npm install`
+5. Run gulp start-server to start server side application with WEB API `gulp start-server`
+6. Run gulp start-client to start client side angular2 application `gulp start-client`
+
+Recommened IDE is Visual Studio Community because it have best integration with Typescript compilation. This is also my prefered IDE as a .NET developer.
+
+## Technologies used for this project
 
 ### Typescript
 TypeScript is a free and open source programming language developed and maintained by Microsoft. It is a strict superset of JavaScript, and adds optional static typing and class-based object-oriented programming to the language. TypeScript is designed for development of large applications and transcompiles to JavaScript. <br/>
