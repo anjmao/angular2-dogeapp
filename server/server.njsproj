@@ -35,7 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="core\" />
-    <Folder Include="core\db\" />
     <Folder Include="modules\" />
     <Folder Include="modules\doge-friends\" />
     <Folder Include="modules\doge-friends\controllers\" />
@@ -57,10 +56,9 @@
     <Folder Include="typings\validator\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="core\db-connection.ts" />
     <TypeScriptCompile Include="modules\doge-friends\controllers\doge-friends-controller.ts" />
     <TypeScriptCompile Include="app.ts" />
-    <TypeScriptCompile Include="core\db\DbConfig.ts" />
-    <TypeScriptCompile Include="core\db\DbConnection.ts" />
     <TypeScriptCompile Include="app.d.ts" />
     <TypeScriptCompile Include="modules\doge-friends\models\doge-friend-model.ts" />
     <TypeScriptCompile Include="modules\doge-friends\services\doge-friends-service.ts" />

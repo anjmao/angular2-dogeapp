@@ -1,35 +1,34 @@
-﻿import DbConnection = require('../../../core/db/DbConnection');
+﻿import dbConnection = require('../../../core/db-connection');
 import Sequelize = require('sequelize');
 
-
-var db = DbConnection.create();
+var db = dbConnection();
 
 
 export interface IDogeFriendInstance extends Sequelize.Instance<IDogeFriendInstance, App.IDogeFriend>, App.IDogeFriend { }
 export interface IDogeFriendModel extends Sequelize.Model<IDogeFriendInstance, App.IDogeFriend> { }
 
 
-var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend', <any>{
+var sequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend', <any>{
     idDogeFriend: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
     firstName: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            len: [2, 30],
+            len: [2, 30]
         }
     },
     lastName: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            len: [2, 30],
+            len: [2, 30]
         }
     },
     favoriteDogePhrase: {
         type: Sequelize.STRING,
         allowNull: false,
         validate: {
-            len: [1, 200],
+            len: [1, 200]
         }
     },
     reputation: {
@@ -41,7 +40,7 @@ var SequalizeModel = db.define<IDogeFriendInstance, App.IDogeFriend>('dogeFriend
     }
 });
 
-SequalizeModel.sync({ force: true }).then((model) => {
+sequalizeModel.sync({ force: true }).then((model) => {
 
     var names = ['Bailey', 'Lucy', 'Charlie', 'Rocky', 'Cooper', 'Sam', 'Zeus'],
         dogePhrases = ['Such Wow Angular2', 'Amaz app with Typescript', 'Much NodeJs', 'Such amaze Sequalize ORM', 'Such wow PostgreSQL'],
@@ -72,4 +71,4 @@ SequalizeModel.sync({ force: true }).then((model) => {
     
 });
 
-export var Model = SequalizeModel;
+export var Model = sequalizeModel;
