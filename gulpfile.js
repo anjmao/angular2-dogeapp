@@ -1,11 +1,12 @@
+/* global require */
+/* global gulp */
+
 var gulp = require('gulp'),
    ts = require('gulp-typescript'),
    sourcemaps = require('gulp-sourcemaps'),
    clean = require('gulp-clean'),
    changed = require('gulp-changed'),
-   concat = require('gulp-concat'),
-   wiredep = require('wiredep').stream,
-   inject = require('gulp-inject');
+   concat = require('gulp-concat');
 
 var config = require('./gulp.config');
 
@@ -67,7 +68,7 @@ function startClient(cb) {
    return nodemon({
       script: config.mainClientFile,
       ignore: ["server/*","client/public/*"],
-      ext: 'js',
+      ext: 'js'
    }).on('start', function () {
       if (!started) {
          cb();
@@ -86,7 +87,7 @@ function startServer(cb) {
       ignore: ["client/*"],
       env: { 'NODE_ENV': 'development' },
       nodeArgs: ['--debug'],
-      ext: 'js',
+      ext: 'js'
    }).on('start', function () {
       if (!started) {
          cb();
@@ -95,7 +96,7 @@ function startServer(cb) {
    });
 }
 
-function compileServer(params) {
+function compileServer() {
    
    var tsResult = gulp.src(config.serverSourcePaths)
       .pipe(sourcemaps.init())
@@ -107,7 +108,7 @@ function compileServer(params) {
       
 }
 
-function compilePublic(params) {
+function compilePublic() {
    var tsResult = gulp.src(config.clientSourcePaths)
       .pipe(sourcemaps.init())
       .pipe(ts(tsPublicProject));
@@ -118,15 +119,15 @@ function compilePublic(params) {
 }
 
 
-function watchServer(params) {
+function watchServer() {
    gulp.watch(config.serverSourcePaths, ['compile-server']);
 }
 
-function watchPublic(params) {
+function watchPublic() {
    gulp.watch(config.clientSourcePaths, ['compile-public']);
 }
 
-function cleanServerJs(params) {
+function cleanServerJs() {
    var paths = [
       config.srcServer + '**/*.js'
    ];
