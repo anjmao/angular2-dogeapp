@@ -1,11 +1,13 @@
-﻿import {Injectable} from 'angular2/angular2';
+﻿import {Injectable, EventEmitter} from 'angular2/angular2';
 import {Http} from 'angular2/http';
 
 @Injectable()
 export class DogeFriendsService {
 
-    base: string = 'http://localhost:5000';
+    formSavedEvent = new EventEmitter();
 
+    base: string = 'http://localhost:5000';
+    
     constructor(private http: Http) {
 
     }

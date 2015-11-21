@@ -72,7 +72,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="public\app\components\about\about.html" />
+    <Content Include="public\app\components\app\sound.mp3" />
     <Content Include="public\app\components\friend-form\friend-form.html" />
+    <Content Include="public\app\components\friends-list\friends-length.html" />
     <Content Include="public\app\components\friends-list\friends-list.html" />
     <Content Include="public\app\components\app\doge-app.html" />
     <Content Include="public\css\bootstrap-paper.css" />
@@ -94,7 +96,7 @@
     <TypeScriptCompile Include="public\app\components\app\app-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\core\doge-friends-service.ts" />
     <TypeScriptCompile Include="public\app\components\friend-form\friend-form-cmp.ts" />
-    <TypeScriptCompile Include="public\app\components\friends-list\friend-row-cmp.ts" />
+    <TypeScriptCompile Include="public\app\components\friends-list\friends-length-cmp.ts" />
     <TypeScriptCompile Include="public\app\components\friends-list\friends-list-cmp.ts" />
     <TypeScriptCompile Include="public\app\services.ts" />
     <TypeScriptCompile Include="public\_references.ts" />

@@ -97,6 +97,8 @@
         <div class="col-sm-offset-2 col-sm-10">
             <button [disabled]="!hf.form.valid" (click)="saveForm()"  type="submit" class="btn btn-success">Save</button>
         </div>
+
+        <button (click)="fireEvent()">Make event</button>
     </div>
 
     <p class="bg-warning" style="padding:15px;">

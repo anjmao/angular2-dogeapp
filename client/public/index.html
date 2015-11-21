@@ -6,7 +6,7 @@
   </head>
 <body>
  
-    <my-app>loading...</my-app>
+    <my-app (form-saved-event)="makeSound($event)">loading...</my-app>
 
     <script src="libs/systemjs.js"></script>
     <script src="libs/angular2.js"></script>

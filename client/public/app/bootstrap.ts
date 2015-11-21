@@ -32,5 +32,4 @@ const APP_PROVIDERS: Array<any> = [
     }),
 ];
 
-
 bootstrap(AppCmp, [APP_PROVIDERS, APP_SERVICE_PROVICERS]).catch(err => console.error(err));

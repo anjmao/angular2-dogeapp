@@ -1,7 +1,6 @@
 ﻿<div class="doge-search-bar">
     <input (keyup)="onSearch($event)" placeholder="First or last name, phrase" type="text" />
 </div>
-
 <div style="overflow: auto; height:500px;">
     <table class="table">
         <thead>
@@ -19,7 +18,6 @@
             <tr *ng-for="#friend of friendsList">
                 <td>
                     <span class="badge">{{friend.reputation}}</span>
-                    <friend-row [row-id]="friend.idDogeFriend">row</friend-row>
                 </td>
                 <td (click)="friend.editable = true">
                     {{friend.firstName}}
@@ -34,7 +32,7 @@
         </tbody>
     </table>
 </div>
-<p>Total records: {{friendsList.length}}</p>
+<friends-length [length]="friendsList.length"></friends-length>
 
 <div *ng-if="friendsList.length === 0">
    <p class="text-center">
