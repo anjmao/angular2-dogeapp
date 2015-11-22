@@ -251,3 +251,4 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 client/public/app/**/*.js
+dist/components/**/*.js

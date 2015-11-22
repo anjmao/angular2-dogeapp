@@ -144,3 +144,16 @@ function log(message, object) {
    }
    
 }
+
+var minify = require('gulp-minify');
+
+gulp.task('compress', function () {
+    gulp.src('client/public/app/**/*.js')
+      .pipe(concat('bootstrap.js'))
+      .pipe(minify({
+          exclude: ['tasks'],
+          mangle: false,
+          ignoreFiles: ['min.js']
+      }))
+      .pipe(gulp.dest('dist'))
+});

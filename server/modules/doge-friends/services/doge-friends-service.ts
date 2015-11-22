@@ -1,5 +1,4 @@
-﻿
-import Sequelize = require('sequelize');
+﻿import Sequelize = require('sequelize');
 import DogeFriendModel = require('../models/doge-friend-model');
 
 
