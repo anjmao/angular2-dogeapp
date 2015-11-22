@@ -27,7 +27,7 @@ Learn more about [NodeJs](https://nodejs.org/)
 
 ### ExpressJs
 Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. Express provides a thin layer of fundamental web application features, without obscuring Node features that you know and love. <br/>
-Learn more about [NodeJs](http://expressjs.com/)
+Learn more about [ExpressJs](http://expressjs.com/)
 
 ### Sequalize ORM
 Sequelize is a promise-based ORM for Node.js and io.js. It supports the dialects PostgreSQL, MySQL, MariaDB, SQLite and MSSQL and features solid transaction support, relations, read replication and more. <br/>
@@ -35,7 +35,7 @@ Learn more about [Sequalize](http://docs.sequelizejs.com/)
 
 ### PostgreSQL
 PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and on standards-compliance. As a database server, its primary function is to store data securely, supporting best practices, and to allow for retrieval at the request of other software applications. It can handle workloads ranging from small single-machine applications to large Internet-facing applications with many concurrent users. <br/>
-Learn more about [Sequalize](http://www.postgresql.org/)
+Learn more about [PostgreSQL](http://www.postgresql.org/)
 
 ## Image
 ![Image of App](https://github.com/Anjmao/angular2-dogeapp/blob/master/app-img.png)
