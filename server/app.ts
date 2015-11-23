@@ -1,14 +1,15 @@
 /// <reference path='_references.ts' />
-import * as express from 'express';
+import express = require('express');
 import {urlencoded, json} from 'body-parser';
 import errorHandler = require('errorhandler');
-import * as cors from 'cors';
+import cors = require('cors');
 import {join} from 'path';
 import dogeFriendsController = require('./modules/doge-friends/controllers/doge-friends-controller');
 
 var app = express();
 
 // Configuration
+
 app.set('port', 5000);
 app.set('views', join( __dirname, '/views') ); // critical to use path.join on windows
 app.set('view engine', 'vash');
@@ -28,3 +29,12 @@ app.listen(app.get('port'), function() {
 });
 
 export var App = app;
+
+
+//import http = require('http');
+//http.createServer(function (req, res) {
+//    res.writeHead(200, { 'Content-Type': 'text/plain' });
+//    res.end('Hello World\n');
+//}).listen(1337, '127.0.0.1');
+
+//console.log('Server running at http://127.0.0.1:1337/');

@@ -12,7 +12,7 @@ interface IDbConfig {
 function getDbConfig() {
 
     var config: IDbConfig = {
-        host: process.env.DB_HOST || 'localhost',
+        host: process.env.DB_HOST || '127.0.0.1',
         database: process.env.DB_NAME || 'candy-fun',
         username: process.env.DB_USERNAME || 'postgres',
         password: process.env.DB_PASSWORD || 'password',

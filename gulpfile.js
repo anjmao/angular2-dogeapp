@@ -49,7 +49,7 @@ function browserSyncTask() {
    browserSync = require('browser-sync').create();
    
    browserSync.init(null, {
-      proxy: "http://localhost:3000",
+      proxy: "http://127.0.0.1:3000",
       files: config.browserSync,
       browser: "google chrome",
       port: 7000,

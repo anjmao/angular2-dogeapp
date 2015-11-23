@@ -4,8 +4,7 @@ import {RouteParams, Router} from 'angular2/router';
 import {DogeFriendsService} from '../core/doge-friends-service';
 
 @Component({
-    selector: 'friend-form',
-    outputs: ['formSavedEvent: formSavedEvent']
+    selector: 'friend-form'
 })
 @View({
     templateUrl: 'app/components/friend-form/friend-form.html',
@@ -18,9 +17,7 @@ export class FriendFormCmp {
         console.log('FriendFormCmp initialized');
         this.init();
     }
-
-    formSavedEvent = new EventEmitter();
-
+    
     errors: any[];
     formSaved: boolean = false;
     reputations: number[] = [1, 2, 3, 4, 5];
@@ -53,8 +50,8 @@ export class FriendFormCmp {
                 this.errors = result.errors;
                 this.formSaved = !this.errors;
 
-                if (this.formSavedEvent) {
-                    this.formSavedEvent.next('form saved');
+                if (this.formSaved) {
+                    this.fireEvent();
                 }
 
             });
@@ -62,7 +59,6 @@ export class FriendFormCmp {
 
     fireEvent() {
         this.dogeFriendsService.formSavedEvent.next('yeee');
-        this.formSavedEvent.next('form saved');
     }
 
     get diagnostic() { return JSON.stringify(this.formModel); }
