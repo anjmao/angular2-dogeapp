@@ -1,5 +1,5 @@
 # Angular2 with Typescript, NodeJs with ExpressJs and Sequalize ORM with PostgreSQL
-In this example I created Demo application to show how to implement server and client side application two do CRUD operations for one DB table called DogeFriends.
+In this example I created Demo application to show how to implement server and client side application to do CRUD operations for one DB table called DogeFriends.
 
 ## Environment setup
 1. Install NodeJs from https://nodejs.org/
